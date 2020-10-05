@@ -10,11 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: - UI
+    
     @IBOutlet var treeImageView: UIImageView!
     @IBOutlet var correctWordLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     
     @IBOutlet var letterButtons: [UIButton]!
+    
+    // MARK: - Properties
     
     var listOfWords = ["buccaneer", "swift", "glorious", "incandescent", "bug", "program"]
     let incorrectMovesAllowed = 7
@@ -30,11 +34,15 @@ class ViewController: UIViewController {
     }
     var currentGame: Game!
     
+    // MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         newRound()
     }
 
+    // MARK: - Methods
+    
     func newRound() {
         if !listOfWords.isEmpty {
             let newWord = listOfWords.removeFirst()
@@ -79,4 +87,3 @@ class ViewController: UIViewController {
         }
     }
 }
-
